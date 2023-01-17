@@ -31,9 +31,13 @@ int main()
 			prev = now;
 			now = now->next;
 		}
-		printf("%d", now->data);
+		printf("%d ", now->data);
 		prev->next = now->next;
 		delete now;
 		now = prev->next;
 	}
+	printf("%d", now->data);
+	delete now;
+
+	return 0;
 }
