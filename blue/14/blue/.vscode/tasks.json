@@ -10,7 +10,7 @@
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                // "-O2",
+                "-O2",
                 "-Wl,--stack=268435456"
             ],
             "options": {
