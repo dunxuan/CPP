@@ -89,5 +89,6 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "variant": "cpp"
-    }
+    },
+    "C_Cpp.default.compilerPath": "C:/mingw64/bin/g++.exe"
 }
