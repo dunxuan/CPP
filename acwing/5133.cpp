@@ -34,8 +34,8 @@ int main()
 			}
 		}
 		int c = b;
-		while () {
-
+		while (m[b]) {
+			
 		}
 	}
 }
