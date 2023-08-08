@@ -1,11 +1,12 @@
 #include <cstdio>
+#include <unordered_map>
 int main()
 {
 	int n;
 	scanf("%d", &n);
-	int m[200000]{};
-	int next[1000000]{}, forward[1000000]{};
-	int x[200000], y[200000];
+	int m[n];
+	std::unordered_map<int, int> next, forward;
+	int x[n], y[n];
 
 	for (int i = 0; i < n; i++) {
 		int a, b;
@@ -34,7 +35,9 @@ int main()
 		b = next[b];
 	}
 
-	for (int i = 0; i < n / 2; i++) {
-		printf("%d %d ", y[i], x[i]);
+	for (int i = 0; i < n; i++) {
+		printf("%d ", i % 2 ? x[i / 2] : y[i / 2]);
 	}
+
+	return 0;
 }
