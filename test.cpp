@@ -24,13 +24,20 @@ void cin_read_nosync()
 	for (int i = 0; i < MAXN; i++)
 		std::cin >> numbers[i];
 }
+void cout_write()
+{
+	freopen("data.txt", "w", stdout);
+	for (int i = 0; i < MAXN; i++)
+		std::cout << i << '\n';
+}
 int main()
 {
 	int start = clock();
 
-	// scanf_read();	//28.150
-	// cin_read();		//10.056
-	// cin_read_nosync();	//3.189
+	// cout_write();
+	// scanf_read();	//24.191
+	// cin_read();		//10.808
+	// cin_read_nosync(); 	//3.790
 
 	printf("%.3lf\n", double(clock() - start) / CLOCKS_PER_SEC);
 }
