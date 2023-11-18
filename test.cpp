@@ -1,14 +1,36 @@
-#include <algorithm>
-#include <array>
 #include <cstdio>
+#include <ctime>
 #include <iostream>
-bool cmp(std::array<int, 3> a, std::array<int, 3> b)
+const int MAXN = 10000000;
+
+int numbers[MAXN];
+
+void scanf_read()
 {
-	return a[2] < b[2];
+	freopen("data.txt", "r", stdin);
+	for (int i = 0; i < MAXN; i++)
+		scanf("%d", &numbers[i]);
+}
+void cin_read()
+{
+	freopen("data.txt", "r", stdin);
+	for (int i = 0; i < MAXN; i++)
+		std::cin >> numbers[i];
+}
+void cin_read_nosync()
+{
+	freopen("data.txt", "r", stdin);
+	std::ios::sync_with_stdio(false);
+	for (int i = 0; i < MAXN; i++)
+		std::cin >> numbers[i];
 }
 int main()
 {
-	std::array<std::array<int, 3>, 3> a = { 0, 0, 3, 0, 0, 2, 0, 0, 1 };
-	std::sort(a.begin(), a.end(), cmp);
-	std::cout << a[0][2];
+	int start = clock();
+
+	// scanf_read();	//28.150
+	// cin_read();		//10.056
+	// cin_read_nosync();	//3.189
+
+	printf("%.3lf\n", double(clock() - start) / CLOCKS_PER_SEC);
 }
