@@ -21,7 +21,7 @@ int main()
 		int m = b.find(a), n = 0;
 		while (m != std::string::npos) {
 			n++;
-			m = b.find(a, m + a.size() - 2);
+			m = b.find(a, m + 1);
 		}
 		std::cout << n << ' ' << b.find(a);
 	}

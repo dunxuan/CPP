@@ -11,8 +11,8 @@
                 "_UNICODE"
             ],
             "compilerPath": "g++",
-            "cStandard": "${default}",
-            "cppStandard": "${default}",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
             "intelliSenseMode": "windows-gcc-x64",
             "compilerArgs": []
         }

@@ -90,5 +90,5 @@
         "valarray": "cpp",
         "variant": "cpp"
     },
-    "C_Cpp.default.compilerPath": "g++"
+    "C_Cpp.default.compilerPath": "g++",
 }
