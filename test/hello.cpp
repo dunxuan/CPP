@@ -1,6 +1,7 @@
+#include <cstdio>
 #include <iostream>
 int main()
 {
-	std::cout<<"Hello world!";
+	printf("%d",'z');
 	return 0;
 }
