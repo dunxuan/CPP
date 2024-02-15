@@ -11,10 +11,10 @@
                 "${file}",
                 "-o",
                 // "${fileDirname}\\${fileBasenameNoExtension}.exe"
-                "${fileWorkspaceFolder}\\build\\${relativeFileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileWorkspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}"
             ],
             "options": {
-                "cwd": "C:\\msys64\\ucrt64\\bin"
+                "cwd": ""
             },
             "problemMatcher": [
                 "$gcc"
