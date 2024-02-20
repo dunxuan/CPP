@@ -10,8 +10,8 @@
                 "-std=c++11",
                 "${file}",
                 "-o",
-                // "${fileDirname}\\${fileBasenameNoExtension}.exe"
-                "${fileWorkspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}"
+                // "${fileDirname}${pathSeparator}${fileBasenameNoExtension}.exe"
+                "${fileWorkspaceFolder}${pathSeparator}build${pathSeparator}${relativeFileDirname}${pathSeparator}${fileBasenameNoExtension}"
             ],
             "options": {
                 "cwd": ""

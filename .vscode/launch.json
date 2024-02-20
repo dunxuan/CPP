@@ -8,7 +8,7 @@
 			"name": "C/C++: g++ 生成和调试活动文件",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${fileWorkspaceFolder}/build/${relativeFileDirname}/${fileBasenameNoExtension}",
+			"program": "${fileWorkspaceFolder}${pathSeparator}build${pathSeparator}${relativeFileDirname}${pathSeparator}${fileBasenameNoExtension}",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
