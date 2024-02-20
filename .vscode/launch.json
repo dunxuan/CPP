@@ -6,33 +6,42 @@
 	"configurations": [
 		{
 			"name": "C/C++: g++ 生成和调试活动文件",
-			"type": "cppdbg",
+			"type": "lldb",
 			"request": "launch",
 			"program": "${fileWorkspaceFolder}${pathSeparator}build${pathSeparator}${relativeFileDirname}${pathSeparator}${fileBasenameNoExtension}",
 			"args": [],
-			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
-			"environment": [],
-			"externalConsole": false,
-			"MIMode": "gdb",
-			"miDebuggerPath": "gdb",
-			"setupCommands": [
-				{
-					"description": "为 gdb 启用整齐打印",
-					"text": "-enable-pretty-printing",
-					"ignoreFailures": true
-				},
-				{
-					"description": "将反汇编风格设置为 Intel",
-					"text": "-gdb-set disassembly-flavor intel",
-					"ignoreFailures": true
-				}
-			],
-			// "logging": {
-			// 	"engineLogging": true,
-			// },
-			"preLaunchTask": "C/C++: g++ 生成活动文件",
-			// "postDebugTask": "C/C++: 删除活动文件"
-		}
+			"preLaunchTask": "C/C++: clang 生成活动文件",
+		},
+		// {
+		// 	"name": "C/C++: g++ 生成和调试活动文件",
+		// 	"type": "cppdbg",
+		// 	"request": "launch",
+		// 	"program": "${fileWorkspaceFolder}${pathSeparator}build${pathSeparator}${relativeFileDirname}${pathSeparator}${fileBasenameNoExtension}",
+		// 	"args": [],
+		// 	"stopAtEntry": false,
+		// 	"cwd": "${fileDirname}",
+		// 	"environment": [],
+		// 	"externalConsole": false,
+		// 	"MIMode": "gdb",
+		// 	"miDebuggerPath": "gdb",
+		// 	"setupCommands": [
+		// 		{
+		// 			"description": "为 gdb 启用整齐打印",
+		// 			"text": "-enable-pretty-printing",
+		// 			"ignoreFailures": true
+		// 		},
+		// 		{
+		// 			"description": "将反汇编风格设置为 Intel",
+		// 			"text": "-gdb-set disassembly-flavor intel",
+		// 			"ignoreFailures": true
+		// 		}
+		// 	],
+		// 	// "logging": {
+		// 	// 	"engineLogging": true,
+		// 	// },
+		// 	"preLaunchTask": "C/C++: g++ 生成活动文件",
+		// 	// "postDebugTask": "C/C++: 删除活动文件"
+		// }
 	]
 }
