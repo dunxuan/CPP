@@ -5,7 +5,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "C/C++: g++ 生成和调试活动文件",
+			"name": "C/C++: clang 生成和调试活动文件",
 			"type": "lldb",
 			"request": "launch",
 			"program": "${fileWorkspaceFolder}${pathSeparator}build${pathSeparator}${relativeFileDirname}${pathSeparator}${fileBasenameNoExtension}",
