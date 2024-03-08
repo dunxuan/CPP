@@ -1,5 +1,6 @@
 #include <iostream>
 int main()
 {
-	std::cout << "Hello world!";
+	int i = 1e6;
+	std::cout << i;
 }
