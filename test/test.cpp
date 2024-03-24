@@ -1,8 +1,7 @@
 #include <iostream>
 int main()
 {
-	bool a=false;
-	a++;
-	std::cout<<a;
+	int a=0;
+	std::cout<<(a-8)%7;
 	
 }
