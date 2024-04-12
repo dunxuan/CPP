@@ -86,6 +86,37 @@ void cin_read_nosync_vector_emplace()
 		numbersVector.emplace_back(n);
 	}
 }
+void scanf_read_vector()
+{
+	std::vector<int> numbersVector(MAXN);
+	freopen("data.txt", "r", stdin);
+	for (int i = 0; i < MAXN; i++) {
+		int n;
+		scanf("%d", &n);
+		numbersVector[i] = n;
+	}
+}
+void cin_read_vector()
+{
+	std::vector<int> numbersVector(MAXN);
+	freopen("data.txt", "r", stdin);
+	for (int i = 0; i < MAXN; i++) {
+		int n;
+		std::cin >> n;
+		numbersVector[i] = n;
+	}
+}
+void cin_read_nosync_vector()
+{
+	std::vector<int> numbersVector(MAXN);
+	freopen("data.txt", "r", stdin);
+	std::ios::sync_with_stdio(false);
+	for (int i = 0; i < MAXN; i++) {
+		int n;
+		std::cin >> n;
+		numbersVector[i] = n;
+	}
+}
 void cout_write()
 {
 	freopen("data.txt", "w", stdout);
@@ -108,6 +139,9 @@ int main()
 	// scanf_read_vector_emplace();		//7.090
 	// cin_read_vector_emplace();		//11.855
 	// cin_read_nosync_vector_emplace(); 	//4.387
+	// scanf_read_vector(); 		//7.308
+	// cin_read_vector();			//11.987
+	// cin_read_nosync_vector(); 		//4.330
 
 	printf("%.3lf\n", double(clock() - start) / CLOCKS_PER_SEC);
 }
