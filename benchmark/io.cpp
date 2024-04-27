@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <ostream>
 #include <vector>
 
 const long long MAXN = 1e7;
@@ -140,15 +141,15 @@ int main()
 	measure_execution_time(scanf_read); 				//6.782
 	measure_execution_time(cin_read); 				//11.701
 	measure_execution_time(cin_read_nosync); 			//4.223
-
+	std::cout<<std::endl;
 	measure_execution_time(scanf_read_vector_push); 		//6.836
 	measure_execution_time(cin_read_vector_push); 		//4.328
 	measure_execution_time(cin_read_nosync_vector_push); 		//4.336
-
+	std::cout<<std::endl;
 	measure_execution_time(scanf_read_vector_emplace); 		//6.846
 	measure_execution_time(cin_read_vector_emplace); 		//4.319
 	measure_execution_time(cin_read_nosync_vector_emplace); 	//4.29
-	
+	std::cout<<std::endl;
 	measure_execution_time(scanf_read_vector); 			//6.844
 	measure_execution_time(cin_read_vector); 			//4.309
 	measure_execution_time(cin_read_nosync_vector); 		//4.303
