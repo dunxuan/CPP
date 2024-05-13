@@ -138,22 +138,22 @@ template <typename Func> void measure_execution_time(Func function)
 int main()
 {
 	// 单独调用和测量每个函数的时间
-	measure_execution_time(scanf_read); 				//6.782
-	measure_execution_time(cin_read); 				//11.701
-	measure_execution_time(cin_read_nosync); 			//4.223
-	std::cout<<std::endl;
-	measure_execution_time(scanf_read_vector_push); 		//6.836
-	measure_execution_time(cin_read_vector_push); 		//4.328
-	measure_execution_time(cin_read_nosync_vector_push); 		//4.336
-	std::cout<<std::endl;
-	measure_execution_time(scanf_read_vector_emplace); 		//6.846
-	measure_execution_time(cin_read_vector_emplace); 		//4.319
-	measure_execution_time(cin_read_nosync_vector_emplace); 	//4.29
-	std::cout<<std::endl;
-	measure_execution_time(scanf_read_vector); 			//6.844
-	measure_execution_time(cin_read_vector); 			//4.309
-	measure_execution_time(cin_read_nosync_vector); 		//4.303
+	measure_execution_time(scanf_read); 				//8.633
+	measure_execution_time(cin_read); 				//11.123
+	measure_execution_time(cin_read_nosync); 			//3.865
+	std::cout<<std::endl;							//
+	measure_execution_time(scanf_read_vector_push); 		//7.871
+	measure_execution_time(cin_read_vector_push); 		//4.153
+	measure_execution_time(cin_read_nosync_vector_push); 		//4.02
+	std::cout<<std::endl;							//
+	measure_execution_time(scanf_read_vector_emplace); 		//7.841
+	measure_execution_time(cin_read_vector_emplace); 		//3.975
+	measure_execution_time(cin_read_nosync_vector_emplace); 	//4.025
+	std::cout<<std::endl;							//
+	measure_execution_time(scanf_read_vector); 			//7.739
+	measure_execution_time(cin_read_vector); 			//4.084
+	measure_execution_time(cin_read_nosync_vector); 		//3.522
 
 	// cout_write 不应该在这里调用和测量，因为它会退出程序
-	// measure_execution_time(cout_write);
+	// cout_write();
 }
