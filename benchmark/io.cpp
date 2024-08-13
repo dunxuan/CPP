@@ -9,11 +9,49 @@ const long long MAXN = 1e7;
 long long numbers[MAXN];
 std::vector<long long> numbersVector;
 
+void scanf_read();
+void cin_read();
+void cin_read_nosync();
+void scanf_read_vector_push();
+void cin_read_vector_push();
+void cin_read_nosync_vector_push();
+void scanf_read_vector_emplace();
+void cin_read_vector_emplace();
+void cin_read_nosync_vector_emplace();
+void scanf_read_vector();
+void cin_read_vector();
+void cin_read_nosync_vector();
+void cout_write();
+template <typename Func> void measure_execution_time(Func function);
+
+int main()
+{
+	// 单独调用和测量每个函数的时间
+	measure_execution_time(scanf_read); 				//8.438
+	measure_execution_time(cin_read); 				//11.373
+	measure_execution_time(cin_read_nosync); 			//3.303
+	std::cout << std::endl; 						//
+	measure_execution_time(scanf_read_vector_push); 		//8.355
+	measure_execution_time(cin_read_vector_push); 		//3.52
+	measure_execution_time(cin_read_nosync_vector_push); 		//3.484
+	std::cout << std::endl; 						//
+	measure_execution_time(scanf_read_vector_emplace); 		//8.771
+	measure_execution_time(cin_read_vector_emplace); 		//3.478
+	measure_execution_time(cin_read_nosync_vector_emplace); 	//3.48
+	std::cout << std::endl; 						//
+	measure_execution_time(scanf_read_vector); 			//8.26
+	measure_execution_time(cin_read_vector); 			//3.423
+	measure_execution_time(cin_read_nosync_vector); 		//3.417
+
+	// cout_write 不应该在这里调用和测量，因为它会退出程序
+	// cout_write();
+}
+
 void scanf_read()
 {
 	freopen("data.txt", "r", stdin);
 	for (long long i = 0; i < MAXN; i++) {
-		scanf("%d", &numbers[i]);
+		scanf("%lld", &numbers[i]);
 	}
 }
 void cin_read()
@@ -36,7 +74,7 @@ void scanf_read_vector_push()
 	freopen("data.txt", "r", stdin);
 	for (long long i = 0; i < MAXN; i++) {
 		long long n;
-		scanf("%d", &n);
+		scanf("%lld", &n);
 		numbersVector.push_back(n);
 	}
 }
@@ -64,7 +102,7 @@ void scanf_read_vector_emplace()
 	freopen("data.txt", "r", stdin);
 	for (long long i = 0; i < MAXN; i++) {
 		long long n;
-		scanf("%d", &n);
+		scanf("%lld", &n);
 		numbersVector.emplace_back(n);
 	}
 }
@@ -93,7 +131,7 @@ void scanf_read_vector()
 	freopen("data.txt", "r", stdin);
 	for (long long i = 0; i < MAXN; i++) {
 		long long n;
-		scanf("%d", &n);
+		scanf("%lld", &n);
 		numbersVector[i] = n;
 	}
 }
@@ -134,26 +172,4 @@ template <typename Func> void measure_execution_time(Func function)
 	int end = clock();
 	double time_taken = static_cast<double>(end - start) / CLOCKS_PER_SEC;
 	std::cout << time_taken << std::endl;
-}
-int main()
-{
-	// 单独调用和测量每个函数的时间
-	measure_execution_time(scanf_read); 				//8.633
-	measure_execution_time(cin_read); 				//11.123
-	measure_execution_time(cin_read_nosync); 			//3.865
-	std::cout<<std::endl;							//
-	measure_execution_time(scanf_read_vector_push); 		//7.871
-	measure_execution_time(cin_read_vector_push); 		//4.153
-	measure_execution_time(cin_read_nosync_vector_push); 		//4.02
-	std::cout<<std::endl;							//
-	measure_execution_time(scanf_read_vector_emplace); 		//7.841
-	measure_execution_time(cin_read_vector_emplace); 		//3.975
-	measure_execution_time(cin_read_nosync_vector_emplace); 	//4.025
-	std::cout<<std::endl;							//
-	measure_execution_time(scanf_read_vector); 			//7.739
-	measure_execution_time(cin_read_vector); 			//4.084
-	measure_execution_time(cin_read_nosync_vector); 		//3.522
-
-	// cout_write 不应该在这里调用和测量，因为它会退出程序
-	// cout_write();
 }
