@@ -6,7 +6,11 @@
         {
             "label": "Create Directory",
             "type": "shell",
-            "command": "mkdir -p '${fileWorkspaceFolder}${pathSeparator}build${pathSeparator}${relativeFileDirname}${pathSeparator}'"
+            "command": "mkdir",
+            "args": [
+                "-f",
+                "${fileWorkspaceFolder}${pathSeparator}build${pathSeparator}${relativeFileDirname}${pathSeparator}"
+            ]
         },
         {
             "type": "process",
