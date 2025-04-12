@@ -27,21 +27,21 @@ template <typename Func> void measure_execution_time(Func function);
 int main()
 {
 	// 单独调用和测量每个函数的时间
-	measure_execution_time(scanf_read); 				//8.438
-	measure_execution_time(cin_read); 				//11.373
-	measure_execution_time(cin_read_nosync); 			//3.303
+	measure_execution_time(scanf_read); 				//7.036
+	measure_execution_time(cin_read); 				//10.958
+	measure_execution_time(cin_read_nosync); 			//3.674
 	std::cout << std::endl; 						//
-	measure_execution_time(scanf_read_vector_push); 		//8.355
-	measure_execution_time(cin_read_vector_push); 		//3.52
-	measure_execution_time(cin_read_nosync_vector_push); 		//3.484
+	measure_execution_time(scanf_read_vector_push); 		//7.004
+	measure_execution_time(cin_read_vector_push); 		//3.773
+	measure_execution_time(cin_read_nosync_vector_push); 		//3.268
 	std::cout << std::endl; 						//
-	measure_execution_time(scanf_read_vector_emplace); 		//8.771
-	measure_execution_time(cin_read_vector_emplace); 		//3.478
-	measure_execution_time(cin_read_nosync_vector_emplace); 	//3.48
+	measure_execution_time(scanf_read_vector_emplace); 		//7.118
+	measure_execution_time(cin_read_vector_emplace); 		//3.19
+	measure_execution_time(cin_read_nosync_vector_emplace); 	//3.756
 	std::cout << std::endl; 						//
-	measure_execution_time(scanf_read_vector); 			//8.26
-	measure_execution_time(cin_read_vector); 			//3.423
-	measure_execution_time(cin_read_nosync_vector); 		//3.417
+	measure_execution_time(scanf_read_vector); 			//7.074
+	measure_execution_time(cin_read_vector); 			//3.789
+	measure_execution_time(cin_read_nosync_vector); 		//3.198
 
 	// cout_write 不应该在这里调用和测量，因为它会退出程序
 	// cout_write();
@@ -130,9 +130,7 @@ void scanf_read_vector()
 	std::vector<long long> numbersVector(MAXN);
 	freopen("data.txt", "r", stdin);
 	for (long long i = 0; i < MAXN; i++) {
-		long long n;
-		scanf("%lld", &n);
-		numbersVector[i] = n;
+		scanf("%lld", &numbersVector[i]);
 	}
 }
 void cin_read_vector()
@@ -140,9 +138,7 @@ void cin_read_vector()
 	std::vector<long long> numbersVector(MAXN);
 	freopen("data.txt", "r", stdin);
 	for (long long i = 0; i < MAXN; i++) {
-		long long n;
-		std::cin >> n;
-		numbersVector[i] = n;
+		std::cin >> numbersVector[i];
 	}
 }
 void cin_read_nosync_vector()
@@ -151,9 +147,7 @@ void cin_read_nosync_vector()
 	freopen("data.txt", "r", stdin);
 	std::ios::sync_with_stdio(false);
 	for (long long i = 0; i < MAXN; i++) {
-		long long n;
-		std::cin >> n;
-		numbersVector[i] = n;
+		std::cin >> numbersVector[i];
 	}
 }
 void cout_write()
